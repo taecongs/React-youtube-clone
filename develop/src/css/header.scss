@@ -1,12 +1,18 @@
 @import './common.scss';
 
-.header{
+.container_header{
     display:flex;
     align-items: center;
     justify-content: space-between;
     height:56px;
     padding:0 16px;
     border-bottom:1px solid $header_gray1;
+    background:$header_bg;
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:1030;
 
     .header_start{
         display:flex;
@@ -99,7 +105,6 @@
             border:1px solid #065fd4;
             padding:5px 15px;
             margin-left:10px;
-            cursor: pointer;
 
              // svg
             .style-scope{
@@ -118,4 +123,22 @@
             }
         }
     }
+}
+
+
+.container_aside{
+    position:fixed;
+    left:0;
+    top:0;
+    height:100%;
+    z-index:1020;
+    // background:#f5f5f5;
+    background:red;
+    border:1px solid red;
+    width:240px;
+    overflow: hidden;
+}
+
+aside.open:not(.mobile) + .content{
+    margin-left:240px;
 }
