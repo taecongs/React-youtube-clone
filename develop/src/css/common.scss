@@ -1,0 +1,77 @@
+@font-face {
+	font-family: 'NanumBarunGothic';
+	font-style: normal;
+	font-weight: 300;
+	src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+	src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+
+
+
+
+* {
+	box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	font-family: 'NanumBarunGothic';
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'ChosunKg';	
+}
+
+ul,ol,li{
+	list-style:none;
+}
+
+table{
+	width:100%;
+	border-spacing:0;
+	border-collapse:collapse;
+}
+
+
+img,fieldset{
+	border:0;
+}
+
+
+address,cite,code,em{
+	font-style:normal;
+	font-weight:normal;
+}
+
+
+label,img,input,select,textarea,button{
+	vertical-align:middle;
+}
+
+input{
+	font-family: 'NanumBarunGothic';
+}
+
+
+// 헤더 색상 
+$header_gray1 : #e5e5e5;
+$header_gray2 : #f8f8f8;
+$header_gray3 : #cccccc;
+$header_hover1 : #f0f0f0;
+$header_focus : #008ABF;
