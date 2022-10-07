@@ -8,11 +8,13 @@
     padding:0 16px;
     border-bottom:1px solid $header_gray1;
     background:$header_bg;
-    position: fixed;
+    // position: fixed;
+    // top:0;
+    // right:0;
+    // left:0;
+    // z-index:1030;
+    position: sticky;
     top:0;
-    right:0;
-    left:0;
-    z-index:1030;
 
     .header_start{
         display:flex;
@@ -133,145 +135,4 @@
 
 
 
-
-
-.multi{
-    display:flex;
-}
-
-
-
-aside {
-    width: 100%;
-    margin-top: 3.5rem;
-    border:1px solid red;
-}
-
-.container_main {
-    display: flex;
-}
-
-.sidebar {
-    flex-shrink: 0;
-    overflow: hidden;
-    width: 66px;
-    // border-right: 1px solid rgb(144, 144, 144);
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 40px);
-    align-items: center;
-    justify-content: stretch;
-    transition: width 200ms ease-in-out;
-    position: sticky;
-    left: 0;
-    top: 40px;
-}
-
-.sidebar .hidden-sidebar {
-    opacity: 0;
-    width: 0;
-    transition: opacity 200ms ease-in-out;
-}
-
-.sidebar.open .hidden-sidebar {
-    width: 100%;
-    height: auto;
-    opacity: 1;
-}
-
-.middle-sidebar {
-    overflow-y: auto;
-    overflow-x: hidden;
-    flex-grow: 1;
-}
-
-.middle-sidebar,
-.bottom-sidebar {
-    width: 100%;
-}
-
-.content {
-    margin: 1rem;
-}
-
-.sidebar-list {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-}
-
-.sidebar.open .sidebar-link {
-    justify-content: flex-start;
-}
-
-.sidebar-icon {
-    width: 25px;
-    height: 25px;
-    flex-shrink: 0;
-}
-
-.sidebar-list .hidden-sidebar {
-    margin-left: 1.5rem;
-    white-space: nowrap;
-}
-
-.sidebar-link {
-    display: flex;
-    width: 100%;
-    padding: 1rem 0;
-    color: rgb(144, 144, 144);
-    text-decoration: none;
-    align-items: center;
-    padding-left: 21px;
-}
-
-.sidebar-list-item {
-    position: relative;
-    width: 100%;
-    fill: rgb(144, 144, 144);
-}
-
-.sidebar-list-item.active {
-    fill: rgb(204, 0, 0);
-    background-color: rgb(244, 244, 244);
-}
-
-.sidebar-list-item:hover {
-    background-color: rgb(244, 244, 244);
-}
-
-.hide-menu {
-    width: 200px;
-    height: calc(100vh - 40px);
-}
-
-.your-channel {
-    color: rgb(13, 13, 13);
-    font-size: .75rem;
-    font-weight: bold;
-    margin-bottom: .15rem;
-    margin-top: .5rem;
-}
-
-.channel-name {
-    color: rgb(96, 96, 96);
-    font-size: .75rem;
-}
-
-.sidebar .top-sidebar {
-    height: 30px;
-    transition: height 200ms ease-in-out;
-}
-
-.sidebar.open .top-sidebar {
-    height: 125px;
-}
-
-.sidebar .top-sidebar .hidden-sidebar {
-    text-align: center;
-    width: 100%;
-}
 

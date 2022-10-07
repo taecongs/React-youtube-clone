@@ -1,0 +1,279 @@
+// 최상단 
+.multi{
+    display:flex;
+}
+
+
+aside {
+    background:#fff;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 56px);
+    align-items: center;
+    position: sticky;
+    left: 0;
+    top: 56px;
+}
+
+.container_main {
+    display: flex;
+}
+
+
+// 첫 화면에서 보여지는 열여있는 사이드바 정의
+.sidebar {
+    flex-shrink: 0;
+    overflow: hidden;
+    width: 66px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 56px);
+    align-items: center;
+    justify-content: stretch;
+    transition: width 200ms ease-in-out;
+    position: sticky;
+    left: 0;
+    top: 56px;
+}
+
+
+// 햄버거 아이콘 클릭 시 닫히는 사이드바 정의
+.hide-menu {
+    width: 240px;
+    height: calc(100vh - 56px);
+    transition: width 200ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    transition: width 200ms ease-in-out;
+    position: sticky;
+    left: 0;
+    top: 56px;
+}
+
+.hidden-sidebar{
+    font-size:14px;
+}
+
+// 사이드바 작아질 때 아이콘 숨긴다.
+.sidebar .hidden-icon{
+    opacity: 0;
+    width: 0;
+    transition: opacity 200ms ease-in-out;
+    display:none;
+}
+
+// 사이드바 작아질 때 텍스트 숨긴다.
+.sidebar .hidden-sidebar {
+    opacity: 0;
+    width: 0;
+    transition: opacity 200ms ease-in-out;
+    display:none;
+}
+
+.sidebar.open .hidden-sidebar {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+}
+
+.middle-sidebar {
+    overflow-y: auto;
+    // overflow-y: scroll;
+    overflow-x: hidden;
+    flex-grow: 1;
+}
+
+
+.content {
+    margin: 1rem;
+}
+
+.sidebar-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+.sidebar.open .sidebar-link {
+    justify-content: flex-start;
+}
+
+.sidebar-icon {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    fill:#000;
+}
+
+
+// 사이드 텍스트 관련
+.sidebar-list .hidden-sidebar {
+    margin-left: 1.4rem;
+    white-space: nowrap;
+}
+
+.sidebar-link {
+    display: flex;
+    width: 100%;
+    padding: 0.7rem 0;
+    color: rgb(144, 144, 144);
+    text-decoration: none;
+    align-items: center;
+    padding-left: 21px;
+    flex-basis: 0.000000001px;
+}
+
+.sidebar-list-item {
+    position: relative;
+    width: 100%;
+    fill: rgb(144, 144, 144);
+}
+
+.sidebar-list-item.active {
+    // background: rgb(244, 244, 244);
+}
+
+
+
+// 사이드바 아이콘 관련
+.sidebar-list-item .fill_h{
+    display:none;
+}
+
+.sidebar-list-item .fill_n{
+    display:block;
+}
+
+.sidebar-list-item.active .fill_h{
+    display:block;
+    fill:#000;
+
+}
+
+.sidebar-list-item.active .fill_n{
+    display:none;
+}
+
+.sidebar-list-item:hover {
+    background-color: rgb(244, 244, 244);
+}
+
+
+
+
+
+// 라인 구분선
+.li_line{
+    border-bottom:1px solid #ddd;
+}
+
+.sidebar .li_line{
+    border-bottom:0;
+}
+
+
+
+// 첫 화면에서 보이는 아이콘 우측 텍스트
+.hidden-sidebar.hidden-text{
+    font-size:10px;
+    line-height: 16px;
+    margin-left:0;
+    text-align: left;
+}
+
+
+
+
+// 사이드바 로그인 관련 텍스트 및 아이콘
+.two-link{
+    // padding-left:40px;
+    // padding-left:0;
+    justify-content: flex-start;
+}
+
+.end_login2{
+    display:flex;
+    width:90px;
+    height:30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #065fd4;
+    // margin:5px auto;
+    margin:5px 0;
+}
+
+// svg
+.style-scope2{
+    pointer-events:none;
+    display:block;
+    width:24px;
+    height:24px;
+    fill:#065fd4;
+}
+
+.end_login_txt2{
+        font-size:14px;
+        color:#065fd4;
+        margin-left:5px;
+        
+}
+
+.sidebar-list-item.no-active{
+    background:#fff;
+}
+
+
+
+// 검은색 이미지
+.ytb-img{
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+}
+
+.sidebar .ytb-img{
+    display:none;
+}
+
+
+// 유튜브 레드 색상 이미지
+.ytb-img2{
+    width:25px;
+    height:20px;    
+}
+
+
+// 하단 정보
+.s-right{
+    margin-right:10px;
+}
+
+.middle-sidebar::-webkit-scrollbar {
+    display:none;
+}
+
+
+// 스크롤바 
+.middle-sidebar:hover::-webkit-scrollbar {
+    display:block;
+    width: 8px;  /* 스크롤바의 너비 */
+}
+
+.middle-sidebar:hover::-webkit-scrollbar-thumb {
+    background: #909090; /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+.middle-sidebar:hover::-webkit-scrollbar-track {
+    background:#fff;
+}
+
+.middle-sidebar, .bottom-sidebar {
+    width: 100%;
+}
