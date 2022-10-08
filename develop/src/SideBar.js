@@ -158,28 +158,28 @@ const SideBar = (props) => {
                                     {/* 유튜브 더보기 */}
                                     <li className="sidebar-list-item">
                                         <span className="sidebar-link">
-                                            <img className='ytb-img' src='./image/ytb-6.jpg' alt='1' />
+                                            <img className='ytb-img' src='./image/redimg-1.png' alt='1' />
                                             <div className="hidden-sidebar">YouTube Premium</div>
                                         </span>
                                     </li>
 
                                     <li className="sidebar-list-item">
                                         <span className="sidebar-link">
-                                            <img className='ytb-img' src='./image/ytb-6.jpg' alt='2' />
+                                            <img className='ytb-img' src='./image/redimg-2.png' alt='2' />
                                             <div className="hidden-sidebar">YouTube Music</div>
                                         </span>
                                     </li>
 
                                     <li className="sidebar-list-item">
                                         <span className="sidebar-link">
-                                            <img className='ytb-img' src='./image/ytb-6.jpg' alt='3' />
+                                            <img className='ytb-img' src='./image/redimg-3.png' alt='3' />
                                             <div className="hidden-sidebar">YouTube Kids</div>
                                         </span>
                                     </li>
 
                                     <li className="sidebar-list-item li_line">
                                         <span className="sidebar-link">
-                                            <img className='ytb-img' src='./image/ytb-6.jpg' alt='3' />
+                                            <img className='ytb-img' src='./image/redimg-4.png' alt='4' />
                                             <div className="hidden-sidebar">YouTube TV</div>
                                         </span>
                                     </li>
