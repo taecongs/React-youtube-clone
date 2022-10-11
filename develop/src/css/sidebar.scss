@@ -1,3 +1,5 @@
+@import './common.scss';
+
 // 최상단 
 .multi{
     display:flex;
@@ -38,7 +40,7 @@ aside {
 
 
 // 햄버거 아이콘 클릭 시 닫히는 사이드바 정의
-.hide-menu {
+.hideMenu {
     width: 240px;
     height: calc(100vh - 56px);
     transition: width 200ms ease-in-out;
