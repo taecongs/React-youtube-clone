@@ -24,6 +24,8 @@ class Youtube {
         date: item.snippet.publishedAt,
         viewCount: item.statistics.viewCount,
         subscriberCount: item.statistics.subscriberCount,
+        likeCount: item.statistics.likeCount,
+        dislikeCount: item.statistics.dislikeCount
       })),
     };
   }
