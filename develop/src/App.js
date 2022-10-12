@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 
 import VideoHeader from './components/video_header';
-import NavBar from './components/nav_bar';
 
 
 function App({ youtube }) {
@@ -14,7 +13,7 @@ function App({ youtube }) {
     const logoClick = useCallback(() => {
         setSelectedVideo(null);
         youtube
-            .mostPopular() //
+            .mostPopular()
             .then((videos) => {
                 const promises = [];
                 Promise.all(youtube.channel(videos, promises)).then(() =>

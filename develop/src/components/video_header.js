@@ -1,4 +1,4 @@
-import React, { memo, useState, useRef } from 'react';
+import React, { memo, useState } from 'react';
 
 // nav_bar 컴포넌트 불러오기
 import NavBar from './nav_bar';
@@ -8,7 +8,7 @@ import NavBar from './nav_bar';
 import '../css/header.scss';
 
 
-const VideoHeader = memo(({ logoClick }) => {
+const VideoHeader = memo((props) => {
   const [isOpen, setMenu] = useState(false);
 
   const hambugerBtn = () => {
@@ -29,7 +29,7 @@ const VideoHeader = memo(({ logoClick }) => {
             </button>
           </div>
 
-          <div className='l_box' onClick={logoClick}>
+          <div className='l_box' onClick={() => {window.location.reload(false);}}>
             <img src='./image/logo.png' alt='logo' width='110px' />
           </div>
         </div>

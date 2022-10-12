@@ -6,7 +6,7 @@ class Youtube {
   async mostPopular() {
     const response = await this.youtube.get('videos', {
       params: {
-        part: 'snippet',
+        part: 'snippet, statistics',
         chart: 'mostPopular',
         regionCode: 'KR',
         maxResults: '36',
@@ -21,11 +21,12 @@ class Youtube {
         title: item.snippet.title,
         channelTitle: item.snippet.channelTitle,
         description: item.snippet.description,
+        date: item.snippet.publishedAt,
+        viewCount: item.statistics.viewCount,
+        subscriberCount: item.statistics.subscriberCount,
       })),
     };
   }
-
-
 
 
 
@@ -54,21 +55,21 @@ class Youtube {
 
 
 
-  
+
   channel(videos, promises) {
     for (let i = 0; i < videos.items.length; i++) {
       const response = this.youtube
         .get('channels', {
           params: {
-            part: 'snippet',
+            part: 'snippet, statistics',
             maxResults: '36',
             id: videos.items[i].channelId,
           },
         })
-        .then(
-          (result) => result.data.items[0].snippet.thumbnails.default.url
-        )
-        .then((url) => (videos.items[i].channelThumbnails = url));
+        .then((result) => {
+          videos.items[i].subscriberCount = result.data.items[0].statistics.subscriberCount;
+          videos.items[i].channelThumbnails = result.data.items[0].snippet.thumbnails.default.url;
+        });
       promises.push(response);
     }
     return promises;

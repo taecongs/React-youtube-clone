@@ -1,5 +1,14 @@
 @import './common.scss';
 
+// 스피너
+.spinner_box{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    top:490px;
+}
+
 
 // 스크롤바 
 body::-webkit-scrollbar {
@@ -14,6 +23,39 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-track {
     background:#fff;
+}
+
+// 카테고리
+.category_box{
+    height:56px;
+    background:#fff;
+    padding:15px;
+    box-sizing:border-box;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.category_box ul li{
+    display:inline-block;
+    margin:0 5px;
+}
+
+.b_button button{
+    background:#030303;
+    color:#fff;
+    border:0;
+    padding:8px 15px;
+    border-radius: 16px;
+}
+
+.s_button button{
+    background:rgba(0, 0, 0, 0.05);
+    color:#030303;
+    border:1px solid rgba(0, 0, 0, 0.1);
+    padding:8px 15px;
+    border-radius: 16px;   
 }
 
 
@@ -38,6 +80,7 @@ article{
     // flex-grow:1;
     box-sizing: border-box;
     height:300px;
+    cursor: pointer;
 }
 
 
@@ -86,24 +129,37 @@ img.detail_img{
 
 // 메인 화면에서 배치
 .flex_home .flex_1{
-    padding:1% 0.5%;
+    padding:0.5% 0.5%;
 }
 
 
 
 // 동영상 클릭 시 화면에서 배치
 .flex_detail{
-    padding:2% 0;
+    padding:2% 2%;
     display:grid;
     grid-template-columns:3fr 1fr;
     column-gap: 20px;
     margin:0 auto;
-    max-width:1600px;
+    // home
+    // max-width:1600px;
+    
+    // mac
+    // max-width:1900px;
+}
+
+// 디테일 화면에서 카테고리 숨김
+.flex_detail .category_box{
+    display:none;
 }
 
 // 디테일 화면 동영상 높이 지정
 .iframe_video{
+    // home
     height:620px;
+
+    // mac
+    height:860px;
 }
 
 
@@ -152,8 +208,13 @@ h1.video_tit{
     font-size:18px;
     border-bottom:1px solid #ddd;
     margin-top:30px;
-    line-height: 60px;
+    line-height: 30px;
     margin-bottom:30px;
+}
+
+p.video_mini.mini_l{
+    line-height: 30px;
+    color:#606060;
 }
 
 
@@ -180,6 +241,7 @@ h1.video_tit{
 
 p.video_mini{
     font-size:12px;
+    margin-top:4px;
 }
 
 
