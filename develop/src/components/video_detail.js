@@ -92,6 +92,18 @@ const VideoDetail = ({ video }) => {
   };
 
 
+  // 제목 위 태그
+  function tagMaker(video) {
+    let result = '';
+    let i = 0;
+    while (i < 3) {
+        result += `#${video.tags[i]} `;
+        i++;
+    }
+    return result;
+}
+
+
   return (
     <section>
       <div className='iframe_video'>
@@ -101,6 +113,7 @@ const VideoDetail = ({ video }) => {
 
         <div className='tit_box'>
           <h1 className='video_tit'>
+          <p className='tag_tit'>{tagMaker(video)}</p>
             {title.body.innerHTML}
             <div className='video_infomation'>
               <p className='video_mini mini_l'>조회수 {countConverter1(video)} <span className='circle_txt'>•</span> {result2}</p>

@@ -113,7 +113,7 @@ img.detail_img{
 .detail_title{
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     overflow: hidden;
     font-size:16px;
     // word-break: break-all;
@@ -214,6 +214,10 @@ h1.video_tit{
 
 p.video_mini.mini_l{
     line-height: 30px;
+    color:#606060;
+}
+
+p.video_mini.mini_2{
     color:#606060;
 }
 
@@ -339,4 +343,11 @@ pre{
 .r_i2{
     margin-left:5px;
     margin-right:15px;
+}
+
+
+// 제목 위 동영상 관련 태그
+.tag_tit{
+    font-size:12px;
+    color:#4195f0;
 }

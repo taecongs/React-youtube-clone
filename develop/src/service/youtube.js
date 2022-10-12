@@ -27,6 +27,7 @@ class Youtube {
         likeCount: item.statistics.likeCount,
         dislikeCount: item.statistics.dislikeCount,
         categoryId: item.snippet.categoryId,
+        tags: item.snippet.tags
       })),
     };
   }
