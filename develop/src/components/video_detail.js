@@ -212,7 +212,6 @@ const VideoDetail = ({ video }) => {
             <div className='channel_inner'>
               <h2 className='ml-3'>{video.channelTitle}</h2>
               <p className='video_mini'>구독자 {countConverter2(video)} 명</p>
-
             </div>
           </div>
 

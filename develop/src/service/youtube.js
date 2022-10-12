@@ -25,7 +25,8 @@ class Youtube {
         viewCount: item.statistics.viewCount,
         subscriberCount: item.statistics.subscriberCount,
         likeCount: item.statistics.likeCount,
-        dislikeCount: item.statistics.dislikeCount
+        dislikeCount: item.statistics.dislikeCount,
+        categoryId: item.snippet.categoryId,
       })),
     };
   }
