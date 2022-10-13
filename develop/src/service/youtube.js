@@ -33,6 +33,8 @@ class Youtube {
     });
     return {
       page: response.data.nextPageToken,
+      // 파라미터로 전달된 함수를 사용해 새로운 배열을 생성한다.
+      // .map((item) => {}) item은? 리스트를 순서대로 돌면서 나오는 값이 저장된다.
       items: response.data.items.map((item) => ({
         id: item.id,
         channelId: item.snippet.channelId,
@@ -80,7 +82,10 @@ class Youtube {
 
 
   channel(videos, promises) {
+    // i는 videos.items.length 작다면 반복문 실행 => i++
+    // videos.items.length는? map()을 통해 반복하여 생성된 배열 리스트
     for (let i = 0; i < videos.items.length; i++) {
+      // console.log('map()을 통해 반복하여 생성된 배열 리스트', videos.items.length);
       const response = this.youtube
         .get('channels', {
           params: {
