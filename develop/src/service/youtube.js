@@ -5,14 +5,17 @@
 
 ====================================================================================================================================*/
 
-
+// Yotube{} 객체 
 class Youtube {
+  // constructor(){}를 통해 객체의 초기 값을 설정해준다.
   constructor(httpClient) {
     console.log(httpClient);
     this.youtube = httpClient;
   }
 
+  // 비동기 처리를 위해 함수 앞에 async를 정의해줬다.
   async mostPopular() {
+    // await ~~~~을 넣어주면 끝날때까지 기다렸다가 다음 작업을 수행 한다.
     const response = await this.youtube.get('videos', {
       params: {
         part: 'snippet, statistics',
