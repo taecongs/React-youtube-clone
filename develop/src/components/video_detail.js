@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 
 const VideoDetail = ({ video }) => {
+  console.log(video);
   const parser = new DOMParser();
   const title = parser.parseFromString(video.title, 'text/html');
   const [open, setOpen] = useState(true);
@@ -61,9 +62,11 @@ const VideoDetail = ({ video }) => {
       result = `${num.toFixed(1)}만`;
     } else if (video.likeCount < 100000000) {
       result = `${Math.floor(video.likeCount / 10000)}만`;
-    } else {
+    } else if (video.likeCount < 100000000) {
       result = `${Math.floor(video.likeCount / 100000000)}억`;
-    }
+    } else {
+      result = '좋아요';
+    } 
     return result;
   }
 
@@ -93,15 +96,21 @@ const VideoDetail = ({ video }) => {
 
 
   // 제목 위 태그
-  function tagMaker(video) {
-    let result = '';
-    let i = 0;
-    while (i < 3) {
-        result += `#${video.tags[i]} `;
-        i++;
+    function tagMaker(video){
+      let result4 = '';
+
+      if ( video.tags == null || video.tags == undefined ) return result4;
+      
+      for(let i = 0; i < 5; i++){
+
+        if(video.tags[i] == undefined) return result4;
+
+        result4 += `#${video.tags[i]} `;
+      }
+
+      return result4;
     }
-    return result;
-}
+
 
 
   return (
@@ -128,6 +137,7 @@ const VideoDetail = ({ video }) => {
                     </svg>
                   </div>
 
+                  {/* 좋아요 */}
                   <div className='r_i2'>
                     {countConverter3(video)}
                   </div>
@@ -142,11 +152,13 @@ const VideoDetail = ({ video }) => {
                     </svg>
                   </div>
 
+                  {/* 싫어요 */}
                   <div className='r_i2'>
                     {video.dislikeCount}<span className='r_txt'>싫어요</span>
                   </div>
                 </div>
 
+                {/* 공유 & 오프라인 저장 & 클립 & 저장 */}
                 <div className='infos_box'>
                   <div className='r_i1'>
                     <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" className='info_icon'>

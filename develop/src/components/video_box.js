@@ -17,12 +17,12 @@ function VideoBox({ youtube}) {
 
     useEffect(() => {
         youtube
-            .mostPopular() //
+            .mostPopular()
             .then((videos) => {
                 const promises = [];
                 Promise.all(youtube.channel(videos, promises)).then(() => {
                     setVideos(videos.items);
-                    console.log(videos.items);
+                    // console.log(videos.items);
                     setTimeout(() => {
                         setLoading(false);
                     }, 500);
@@ -55,7 +55,7 @@ function VideoBox({ youtube}) {
                 )}
                 <div className='flex_1'>
                     {isLoading && (<div className='spinner_box'><span><img src='../image/spinner.gif' alt='스피너' /></span></div>)}
-                    {!isLoading && ( <VideoList videos={videos} onVideoClick={selectVideo} display={selectedVideo ? 'list' : 'grid'}/>)}
+                    {!isLoading && ( <VideoList videos={videos} onVideoClick={selectVideo} />)}
                 </div>
             </section>
         </article>

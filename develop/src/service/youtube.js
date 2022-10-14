@@ -16,7 +16,7 @@
 class Youtube {
   // constructor(){}를 통해 객체의 초기 값을 설정해준다.
   constructor(httpClient) {
-    console.log(httpClient);
+    // console.log(httpClient);
     this.youtube = httpClient;
   }
 
@@ -28,7 +28,7 @@ class Youtube {
         part: 'snippet, statistics',
         chart: 'mostPopular',
         regionCode: 'KR',
-        maxResults: '36',
+        maxResults: '49',
       },
     });
     return {
@@ -59,7 +59,7 @@ class Youtube {
     const response = await this.youtube.get('search', {
       params: {
         part: 'snippet',
-        maxResults: '36',
+        maxResults: '49',
         q: query,
         type: 'video',
       },
@@ -90,7 +90,7 @@ class Youtube {
         .get('channels', {
           params: {
             part: 'snippet, statistics',
-            maxResults: '36',
+            maxResults: '49',
             id: videos.items[i].channelId,
           },
         })

@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 
 import '../css/sidebar.scss';
 import '../css/content.scss';
@@ -20,6 +20,9 @@ const httpClient = axios.create({
 
 const youtube = new Youtube(httpClient);
 
+// 함수 하나를 만든다.
+// active 클래스를 없애는 함수를 만든다.
+// 타고타고 가서 VideoList 에  props 준다.
 
 const NavBar = memo((props) => {
     return (
